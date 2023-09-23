@@ -1,29 +1,31 @@
 :root {
-    --mainColor: #575a85;
-    --secondaryColor: #e0ebfe;
+    --mainColor: #eef4ed;
+    --secondaryColor: #eef4ed;
 
-    --borderColor: #342e42;
+    --borderColor: #11151c;
 
-    --mainTextColor: #b0c6ec;
-    --secondaryTextColor: #1c1b21;
+    --mainTextColor: #151b25;
+    --secondaryTextColor: #eef4ed;
+    --thirdTextColor: #8da9c4;
 
-    --linkColor: #d970ff;
+    --tabHeight: 60px;
+    --tabWidth: 150px;
 }
 
 html, body {
-    background-color: var(--mainColor);
     padding: 0;
     margin: 0;
+    background-color: var(--mainColor);
 }
 
 h1, h2, h3, h4, h5, h6, strong {
-    color: var(--mainTextColor);
-    font-family: 'Courier Prime', monospace;
+    color: var(--secondaryTextColor);
+    font-family: 'Gloock', serif;
     font-weight: 700;
 }
 
 p, li, label, input, textarea{
-    color: var(--secondaryTextColor);
+    color: var(--mainTextColor);
     font-family: 'Roboto Mono', monospace;
     font-weight: 400;
 }
@@ -37,8 +39,8 @@ ul{
 }
 
 h1 { 
-    font-size: 56px;
-    text-shadow: 4px 3px 1px var(--borderColor);
+    font-size: 64px;
+    text-shadow: 1px 1px 3px var(--borderColor);
 }
 h2 { font-size: 36px}
 h3 { font-size: 28px}
@@ -47,25 +49,27 @@ h5 { font-size: 20px}
 h6 { font-size: 16px}
 
 .main-container{
-    width: 1200px;
-    margin: 0 auto;
+    height: 100vh;
+    background-image: url(background1.jpg);
+    background-size: cover;
+    
 }
 
 .greeting-wrapper{
-    display: grid;
+    display: flex;
     justify-content: center;
     align-content: center;
     min-height: 10em;
 }
 
 .secondary-container{
-    width: 1200px;
-    margin: 80px auto;
+    width: 800px;
+    margin: 3em auto;
     background-color: var(--secondaryColor);
 
-    -webkit-box-shadow: 15px 15px 2px 0px var(--borderColor);
-    -moz-box-shadow: 15px 15px 2px 0px var(--borderColor);
-    box-shadow: 15px 15px 2px 0px var(--borderColor);
+    -webkit-box-shadow: 11px 11px 10px 0px var(--borderColor);
+    -moz-box-shadow: 11px 11px 10px 0px var(--borderColor);
+    box-shadow: 11px 11px 10px 0px var(--borderColor);
 }
 
 .sub-wrapper{
@@ -73,7 +77,7 @@ h6 { font-size: 16px}
 
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 60px 700px;
+    grid-template-rows: var(--tabHeight) 400px;
     grid-template-areas:
     'tabs-row    tabs-row' 
     'left-column right-column';
@@ -81,31 +85,41 @@ h6 { font-size: 16px}
 
 .left-column{
     grid-area: left-column;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .right-column{
     grid-area: right-column;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .tabs-row{
-    height: 60px;
-    display: grid;
-    justify-content: right;
+    height: var(--tabHeight);
+    display: flex;
+    justify-content: flex-end;
     align-content: center;
     border-bottom:2px solid var(--borderColor);
     grid-area: tabs-row;
-    grid-template-columns: 150px 150px 150px 150px;
-    grid-template-areas:
-    'button1 button2 button3 button4' 
 }
 
 .tab-button{
     font-family: 'Roboto Mono', monospace;
     font-weight: 800;
-    color: var(--secondaryTextColor);
+    font-size: 24px;
+    color: var(--mainTextColor);
 
-    width: 150px;
-    height: 60px;
+    width: var(--tabWidth);
+    height: var(--tabHeight);
     display: grid;
     justify-content: center;
     align-content: center;
@@ -117,18 +131,14 @@ h6 { font-size: 16px}
 }
 
 .tab-button:hover{
-    color: var(--secondaryColor);
+    color: var(--thirdTextColor);
     background: var(--borderColor);
 }
 
-#button1{ grid-area: button1; }
-#button2{ grid-area: button2; }
-#button3{ grid-area: button3; }
-#button4{ grid-area: button4; }
-
-
-@media screen and (max-width: 1200px) {
-    .main-container{
-        width: 95%;
-    }
+#about_image{
+    background-image: url(about_image1.jpg);
+    border:2px solid var(--borderColor);
+    height: 95%;
+    width: 70%;
+    background-size: cover;
 }
