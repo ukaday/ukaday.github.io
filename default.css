@@ -1,0 +1,134 @@
+:root {
+    --mainColor: #575a85;
+    --secondaryColor: #e0ebfe;
+
+    --borderColor: #342e42;
+
+    --mainTextColor: #b0c6ec;
+    --secondaryTextColor: #1c1b21;
+
+    --linkColor: #d970ff;
+}
+
+html, body {
+    background-color: var(--mainColor);
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, strong {
+    color: var(--mainTextColor);
+    font-family: 'Courier Prime', monospace;
+    font-weight: 700;
+}
+
+p, li, label, input, textarea{
+    color: var(--secondaryTextColor);
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+h1 { 
+    font-size: 56px;
+    text-shadow: 4px 3px 1px var(--borderColor);
+}
+h2 { font-size: 36px}
+h3 { font-size: 28px}
+h4 { font-size: 24px}
+h5 { font-size: 20px}
+h6 { font-size: 16px}
+
+.main-container{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.greeting-wrapper{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 10em;
+}
+
+.secondary-container{
+    width: 1200px;
+    margin: 80px auto;
+    background-color: var(--secondaryColor);
+
+    -webkit-box-shadow: 15px 15px 2px 0px var(--borderColor);
+    -moz-box-shadow: 15px 15px 2px 0px var(--borderColor);
+    box-shadow: 15px 15px 2px 0px var(--borderColor);
+}
+
+.sub-wrapper{
+    border:1px var(--borderColor);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 60px 700px;
+    grid-template-areas:
+    'tabs-row    tabs-row' 
+    'left-column right-column';
+}
+
+.left-column{
+    grid-area: left-column;
+}
+
+.right-column{
+    grid-area: right-column;
+}
+
+.tabs-row{
+    height: 60px;
+    display: grid;
+    justify-content: right;
+    align-content: center;
+    border-bottom:2px solid var(--borderColor);
+    grid-area: tabs-row;
+    grid-template-columns: 150px 150px 150px 150px;
+    grid-template-areas:
+    'button1 button2 button3 button4' 
+}
+
+.tab-button{
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 800;
+    color: var(--secondaryTextColor);
+
+    width: 150px;
+    height: 60px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    background: transparent;
+    border:0px;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.tab-button:hover{
+    color: var(--secondaryColor);
+    background: var(--borderColor);
+}
+
+#button1{ grid-area: button1; }
+#button2{ grid-area: button2; }
+#button3{ grid-area: button3; }
+#button4{ grid-area: button4; }
+
+
+@media screen and (max-width: 1200px) {
+    .main-container{
+        width: 95%;
+    }
+}
